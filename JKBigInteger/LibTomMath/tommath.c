@@ -1,5 +1,7 @@
 #include "tommath.h"
 
+#ifndef __clang_analyzer__
+
 #ifdef BN_S_MP_MUL_DIGS_C
 /* LibTomMath, multiple-precision integer library -- Tom St Denis
  *
@@ -6923,3 +6925,5 @@ int mp_unsigned_bin_size (mp_int * a)
   return (size / 8 + ((size & 7) != 0 ? 1 : 0));
 }
 #endif
+
+#endif // clang
